@@ -1,0 +1,6 @@
+server:
+  port: 8080
+  #server.context-path: /girl   设置url
+girl:
+  cupSize: B
+  age: 18

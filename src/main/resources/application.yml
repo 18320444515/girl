@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+    #【重要价值】其多环境配置之一法也。在使用java -jar启动时，可以同时输入参数，实现配置信息的轮换
+        # ../targer> java -jar girl-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbgirl
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+                #create是每次启动都将重新创建,update则不会
+                #create-drop表示应用停下来时会自动把表删掉
+                #none表示默认什么都不做
+                #validate会验证表的属性是否与期望的一致，若不一致将报错
+    show-sql: true
+
+
+
+#server.context-path: /girl   设置url
+
+#content: "cupSize: ${cupSize}, age: ${age}"
+#【两种注解加值方法：】
+# 1.最基础的简单使用配置内容的方法 @Value("${xxx}")
+# 2.@Component @ConfigurationProperties(prefix = "girl") @Autowired 三连击
