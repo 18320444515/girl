@@ -55,7 +55,8 @@ public class HttpAspect {
 
     @AfterReturning(returning = "object",pointcut = "log()")
     public void doAfterReturning(Object object){
-     //   logger.info("response={}",object);   /* 若开启这里,将会引发异常,大概是object==null,调用了null的toString()方法 */TODO 原理思路欠
+     //   logger.info("response={}",object)
+     // /* 若开启这里,将会引发异常,大概是object==null,调用了null的toString()方法 */TODO 原理思路欠
     }
 }
 
