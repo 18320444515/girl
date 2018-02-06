@@ -5,14 +5,14 @@ spring:
         # ../targer> java -jar girl-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
 
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver   #mysql的驱动
     url: jdbc:mysql://127.0.0.1:3306/dbgirl
     username: root
     password: root
   jpa:
     hibernate:
-      ddl-auto: update
-                #create是每次启动都将重新创建,update则不会
+      ddl-auto: update         #【重点！以后选中不同的功能项时修改此处配置即可】
+                #create是每次启动都将重新创建一个只有格式没有内容的空表,update则不会
                 #create-drop表示应用停下来时会自动把表删掉
                 #none表示默认什么都不做
                 #validate会验证表的属性是否与期望的一致，若不一致将报错
@@ -22,7 +22,10 @@ spring:
 
 #server.context-path: /girl   设置url
 
-#content: "cupSize: ${cupSize}, age: ${age}"
-#【两种注解加值方法：】
-# 1.最基础的简单使用配置内容的方法 @Value("${xxx}")
+#content: "cupSize: ${cupSize}, age: ${age}"     ———配置文件的内容，其中这是复合配置，cupSize和age是与content同性质的配置
+#【两种通过注解加入配置里的值的方法：】
+# 1.最基础的简单使用配置内容的方法 @Value("${xxx}")    ———写完以一句后换行紧接着定义存放配置值的变量，通过该变量使用配置值
 # 2.@Component @ConfigurationProperties(prefix = "girl") @Autowired 三连击
+#       ———创建含有getter/setter的 GirlProperties类，并加上@ConfigurationProperties(prefix = "girl")，表示对应前缀的girl的配置信息
+#       ———在Controller类中用@Autowired生成自动实例，通过实例调用gett/sett方法
+#       ———使用@Autowired的前提是自动生成的那个类要有组件性质@Component，一般加在@ConfigurationProperties(prefix = "girl")上一行

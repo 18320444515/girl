@@ -46,7 +46,7 @@ public class GirlController {
      */
     @PostMapping(value = "/girls")
     public Result<Girl> girlAdd(@Valid Girl girl, BindingResult bindingResult){
-        //TODO 为什么不可以与视频一样用form-data，而必须用x-www-form-urlencoded ？？？？
+        //TODO 在postman里为什么不可以与视频一样用form-data，而必须用x-www-form-urlencoded ？？？？
 
         if (bindingResult.hasErrors()){
 

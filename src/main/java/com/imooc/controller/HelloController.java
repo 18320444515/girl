@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.*;
  */
 //@Controller  【前后端分离不推荐】若仅用controller，则需要a.pom引入thymeleaf依赖  b.return “具体的(html)文件名”如"index"（与web jsp那些有相似）
 @RestController //@RestController = @Controller + @ResponseBody
-
-
 @RequestMapping(value ="/hello")
 public class HelloController {             //【各基础知识】
 
@@ -27,7 +25,7 @@ public class HelloController {             //【各基础知识】
     //@RequestParam 与@PathVariable("id")不同的是，前者必须通过 ?id=153 才能获取参数值
     //              且前者可以添加更多属性设置，如是否必传、默认值等
     @RequestMapping(value = "/say", method = RequestMethod.GET)
-    //也可以用@GetMapping、@PostMapping来代替@RequestMapping，可以少些一些代码
+    //也可以用 @GetMapping、@PostMapping来代替@RequestMapping，可以少些一些代码
     public String say(@RequestParam(value = "id", required = false, defaultValue = "0")Integer myId){
         return girlProperties.getCupSize()+myId;
     }

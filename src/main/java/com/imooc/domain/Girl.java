@@ -13,11 +13,11 @@ import javax.validation.constraints.NotNull;
  * @author tianyi
  * @date 2018-01-11 15:45
  */
-@Entity
-public class Girl {       //【通过Entity创建数据库里的数据表】
+@Entity       //【通过@Entity创建数据库里的数据表】
+public class Girl {
 
-    @Id
-    @GeneratedValue
+    @Id            //表示id列
+    @GeneratedValue    //自增
     private Integer id;
 
     @NotBlank(message = "这个字段必传")
