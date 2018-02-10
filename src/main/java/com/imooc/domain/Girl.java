@@ -23,6 +23,7 @@ public class Girl {
     @NotBlank(message = "这个字段必传")
     private String cupSize;
 
+    //【重点是要在具体的Controller的参数里加@Valid进行验证合法性】
     @Min(value = 18, message = "未成年少女禁止入门")
 //    @NotNull
 //    @Max()

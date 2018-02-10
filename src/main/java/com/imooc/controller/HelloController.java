@@ -2,14 +2,15 @@ package com.imooc.controller;
 
 import com.imooc.properties.GirlProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * @author tianyi
  * @date 2018-01-11 13:29
  */
-//@Controller  【前后端分离不推荐】若仅用controller，则需要a.pom引入thymeleaf依赖  b.return “具体的(html)文件名”如"index"（与web jsp那些有相似）
-@RestController //@RestController = @Controller + @ResponseBody
+@Controller  //【前后端分离不推荐】若仅用controller，则需要a.pom引入thymeleaf依赖  b.return “具体的(html)文件名”如"index"（与web jsp那些有相似）
+//@RestController //@RestController = @Controller + @ResponseBody
 @RequestMapping(value ="/hello")
 public class HelloController {             //【各基础知识】
 

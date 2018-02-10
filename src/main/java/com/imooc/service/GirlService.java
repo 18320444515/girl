@@ -18,7 +18,7 @@ public class GirlService {          //【体现安全性】
     @Autowired
     private GirlRepository girlRepository;
 
-    @Transactional//加了"事务"@Transactional后，若其中有数据插入失败，则将都报错，没有一条会成功
+    @Transactional      //加了"事务"@Transactional后，若其中有数据插入失败，则将都报错，没有一条会成功
     //【延伸】除了查询不需要加"事务"@Transactional，为安全起见，其他都要加
     public void insertTwo(){
         Girl girlA=new Girl();

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@ import java.util.List;
  * @date 2018-01-11 16:43
  */
 @RestController
+//@Controller
 public class GirlController {
     private final static Logger logger= LoggerFactory.getLogger(GirlController.class);
 
@@ -96,5 +98,12 @@ public class GirlController {
     @GetMapping(value = "girls/getAge/{id}")
     public void getAge(@PathVariable("id") Integer id) throws Exception{
         girlService.getAge(id);
+    }
+
+
+
+    @GetMapping(value = "/index")
+    public String toHome(){
+        return "home";
     }
 }

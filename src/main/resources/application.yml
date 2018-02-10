@@ -1,4 +1,8 @@
 spring:
+  mvc:
+    view:
+      prefix: classpath:/
+      suffix: .html
   profiles:
     active: dev
     #【重要价值】其多环境配置之一法也。在使用java -jar启动时，可以同时输入参数，实现配置信息的轮换
@@ -19,6 +23,9 @@ spring:
     show-sql: true
 
 
+jedis:
+  ip: 127.0.0.1
+  port: 6379
 
 #server.context-path: /girl   设置url
 
