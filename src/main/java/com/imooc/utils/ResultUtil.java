@@ -10,7 +10,7 @@ import com.imooc.domain.Result;
 public class ResultUtil {
     /* static静态方法可以不用new即可使用，妙 */
 
-    public static Result success(Object object){
+    public static Result success(Object object){   //【此类的创造目的在于减少重复的代码】
         Result result=new Result();
         result.setCode(0);
         result.setMsg("成功");

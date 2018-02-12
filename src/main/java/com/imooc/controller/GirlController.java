@@ -57,7 +57,7 @@ public class GirlController {
         girl.setAge(girl.getAge());
         girl.setCupSize(girl.getCupSize());
 
-        return ResultUtil.success(girlRepository.save(girl));
+        return ResultUtil.success(girlRepository.save(girl));  //【为了减少重复的代码，创造一个ResultUtil类】
     }
 
     //查询

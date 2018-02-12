@@ -5,7 +5,7 @@ package com.imooc.domain;
  * @author tianyi
  * @date 2018-01-11 22:27
  */
-public class Result<T> {      //【把返回的格式给固定好了，无论是成功还是异常皆适用】
+public class Result<T> {      //用了泛型T就可以把该Result模板运用到其他格式上，不止是Girl，而是T【把返回的格式给固定好了，无论是成功还是异常皆适用】
     /* 错误码 */
     private Integer code;
 

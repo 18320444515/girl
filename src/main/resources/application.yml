@@ -15,7 +15,7 @@ spring:
     password: root
   jpa:
     hibernate:
-      ddl-auto: update         #【重点！以后选中不同的功能项时修改此处配置即可】
+      ddl-auto: update         #【重点！以后选中不同的功能项时修改此处配置即可】这只是对于表的操作，具体数据的操作还需看Controller
                 #create是每次启动都将重新创建一个只有格式没有内容的空表,update则不会
                 #create-drop表示应用停下来时会自动把表删掉
                 #none表示默认什么都不做
